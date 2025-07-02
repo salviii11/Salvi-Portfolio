@@ -1,0 +1,165 @@
+/* Custom CSS - This file supplements Tailwind CSS from CDN */
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  /* Custom color variables */
+  --color-primary: #6366f1; /* indigo-500 */
+  --color-primary-light: #a18fff;
+  --color-primary-dark: #7c3aed;
+  --color-accent: #818cf8; /* indigo-400 */
+  --color-dark: #18181b;
+  --speed-normal: 300ms;
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  margin: 0;
+  display: block;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-dark);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Special animations that may not be in Tailwind */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* Fix any alignment issues with Font Awesome icons */
+.fas, .fab, .far, .fa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom utility classes for backward compatibility */
+.from-primary-light {
+  --tw-gradient-from: var(--color-primary-light);
+}
+
+.to-primary {
+  --tw-gradient-to: var(--color-primary);
+}
+
+.from-dark {
+  --tw-gradient-from: var(--color-dark);
+}
+
+.to-dark\/95 {
+  --tw-gradient-to: rgba(24, 24, 27, 0.95);
+}
+
+.from-dark\/90 {
+  --tw-gradient-from: rgba(24, 24, 27, 0.9);
+}
+
+.to-transparent {
+  --tw-gradient-to: transparent;
+}
+
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-t {
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+/* Force text-pink-500 to be indigo-400 */
+.text-pink-500 {
+  color: #818cf8 !important;
+}
+
+/* Force bg-pink-500 to be indigo-400 */
+.bg-pink-500 {
+  background-color: #818cf8 !important;
+}
+
+/* Force text-red-500 to be indigo-400 */
+.text-red-500 {
+  color: #818cf8 !important;
+}
+
+/* Force bg-red-500 to be indigo-400 */
+.bg-red-500 {
+  background-color: #818cf8 !important;
+}
+
+/* Force border-pink-500 to be indigo-400 */
+.border-pink-500 {
+  border-color: #818cf8 !important;
+}
+
+/* Force border-red-500 to be indigo-400 */
+.border-red-500 {
+  border-color: #818cf8 !important;
+}
+
+/* Force hover states */
+.hover\:bg-pink-600:hover {
+  background-color: #6366f1 !important; /* indigo-500 for slightly darker hover */
+}
+
+.hover\:border-pink-500:hover {
+  border-color: #818cf8 !important;
+}
+
+.hover\:text-red-500:hover {
+  color: #818cf8 !important;
+}
+
+.hover\:shadow-pink-500:hover {
+  box-shadow: 0 0 10px rgba(129, 140, 248, 0.5) !important;
+}
